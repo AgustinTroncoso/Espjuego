@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-
+import Users from '../assets/Users.json';
 import useVuelidate from '@vuelidate/core';
 import { maxLength, minLength, required, helpers } from '@vuelidate/validators';
 import { ref } from 'vue';
@@ -46,10 +46,13 @@ const v$ = useVuelidate(rules, loginData);
 const login = async () => {
     const result = await v$.value.$validate();
     if (result) {
-        localStorage.setItem('isLoggedIn', true);
-        localStorage.setItem('email', loginData.value.email);
-        localStorage.setItem('password', loginData.value.password);
-        router.push('/');
+        const user = Users.find(user => user.email === loginData.value.email && user.password === loginData.value.password);
+        if (user) {
+            localStorage.setItem('user', JSON.stringify(user));
+            router.push({ name: 'Home' });
+        } else {
+            alert('Usuario o contraseña incorrectos');
+        }
     }
 };
 </script>

@@ -37,7 +37,8 @@
       }
     },
     mounted() {
-      this.isAuthenticated = localStorage.getItem("isLoggedIn") === "true";
+      console.log(localStorage.getItem("user"));
+      this.isAuthenticated = localStorage.getItem("user") !== null ? true : false;
     },
     methods: {
       hideDropdown() {
@@ -46,15 +47,13 @@
         }, 200)
       },
       logout() {
-        localStorage.removeItem('email');
-        localStorage.removeItem('password');
-        localStorage.setItem('isLoggedIn', 'false');
+        localStorage.removeItem("user");
         this.isAuthenticated = false;
         location.reload();
       },
       handleButtonClick() {
         if (this.isAuthenticated) {
-          this.$router.push('/Profile');
+          this.$router.push('/Game');
         } else {
           this.$router.push('/Login');
         }
