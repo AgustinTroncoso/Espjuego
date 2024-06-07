@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "fakeChiaki",
+      "email": "fakeChiaki@gmail.com",
+      "password": "fakechiaki123"
+    },
+    {
+      "id": 2,
+      "name": "Cquark",
+      "email": "cquark@gmail.com",
+      "password": "cquark123"
+    },
+    {
+      "id": 3,
+      "name": "KingOfArauco",
+      "email": "kingofarauco@gmail.com",
+      "password": "kingofarauco123"
+    },
+    {
+      "id": 4,
+      "name": "rShade",
+      "email": "rshade@gmail.com",
+      "password": "anapass321"
+    },
+    {
+      "id": 5,
+      "name": "DemonG",
+      "email": "luis.rodriguez@example.com",
+      "password": "luispass654"
+    },
+    {
+      "id": 6,
+      "name": "AndoresuChan",
+      "email": "sofia.fernandez@example.com",
+      "password": "sofiapass987"
+    }
+  ]
