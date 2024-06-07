@@ -1,14 +1,15 @@
 <template>
     <div>
-      <h2>Jugador {{ playerNumber }}</h2>
+      <h2>Player {{ playerNumber }}</h2>
       <img :src="playerGifUrl" alt="Jugador" class="player-gif" />
       <p>Vida: {{ health }}</p>
       <p>Mana: {{ mana }}</p>
       <p>Daño total: {{ totalDamage }}</p>
-      <button @click="attack('physical')" :disabled="!isTurn || isDefeated">Atacar Físico</button>
-      <button @click="attack('magic')" :disabled="!isTurn || mana < 10 || isDefeated">Atacar con Magia</button>
-      <button @click="handleRegenerateMana" :disabled="!isTurn || isDefeated">Recargar Mana</button>
+      <button @click="attack('physical')" :disabled="!isTurn || isDefeated">Atack</button>
+      <button @click="attack('magic')" :disabled="!isTurn || mana < 10 || isDefeated">Use magic</button>
+      <button @click="handleRegenerateMana" :disabled="!isTurn || isDefeated">Recharge   Mana</button>
     </div>
+    <audio ref="attackSound" src="../assets/Punch"></audio>
   </template>
   
   <script>
@@ -39,12 +40,14 @@
         let damage = 0;
         if (type === 'physical') {
           damage = Math.floor(Math.random() * 10) + 1;
+          
         } else if (type === 'magic' && this.mana >= 10) {
           damage = Math.floor(Math.random() * 20) + 5;
           this.mana -= 10;
         }
         this.totalDamage += damage;
         this.$emit('attack', { damage, playerNumber: this.playerNumber });
+        this.$refs.attackSound.play();
       },
       receiveDamage(damage) {
         this.health -= damage;
@@ -69,6 +72,9 @@
  .player-gif {
   width: 100px; 
   height: auto; 
+}
+#p{
+  color: white;
 }
   </style>
   

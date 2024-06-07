@@ -8,7 +8,7 @@
         <div class="container__text">
             <div class="title-with-image">
                 <img src="/src/components/icons/OpenHand.png" alt="Open Hand">
-                <h2>Bienvenido a la Wiki de Brave Frontier!</h2>
+                <h2>Welcome to the Wiki of Brave Frontier!</h2>
             </div>
 
             <p>Brave Frontier (ブレイブフロンティア, Bureibu Furontia) was a Japanese mobile role-playing game developed and published by A-Lim.  It was first released in Japan by A-Lim on July 3, 2013, and later released worldwide by Gumi and managed by 2 locations, Gumi Asia and Gumi Europe.</p>

@@ -1,8 +1,8 @@
 <template>
     <div>
-      <h2>El diablo</h2>
+      <h2>The Devil</h2>
       <img :src="monsterGifUrl" alt="Monstruo" class="monster-gif"/>       
-      <p>Vida: {{ health }}</p>
+      <p>life: {{ health }}</p>
     </div>
   </template>
   
@@ -31,6 +31,13 @@
  .monster-gif {
   width: 200px; 
   height: auto; 
+}
+#h1{
+  color: white;
+
+}
+#p{
+  color: white;
 }
   </style>
   
